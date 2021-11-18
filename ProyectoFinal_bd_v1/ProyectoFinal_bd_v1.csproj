@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04A5163C-D492-491B-B247-9F013E93BB95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProyectoFinal_bd_v1</RootNamespace>
+    <AssemblyName>ProyectoFinal_bd_v1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bin\Debug\Reportes\RepViajes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepViajes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clases\Caja.cs" />
+    <Compile Include="Clases\Ciudad.cs" />
+    <Compile Include="Clases\ClienteDestino.cs" />
+    <Compile Include="Clases\ClienteEmisor.cs" />
+    <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\Factura.cs" />
+    <Compile Include="Clases\FacturaAux.cs" />
+    <Compile Include="Clases\Iva.cs" />
+    <Compile Include="Clases\Mercancia.cs" />
+    <Compile Include="Clases\Operador.cs" />
+    <Compile Include="Clases\Tractor.cs" />
+    <Compile Include="Clases\Viaje.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CajaPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CajaPanel.Designer.cs">
+      <DependentUpon>CajaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ClienteDestinoPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ClienteDestinoPanel.Designer.cs">
+      <DependentUpon>ClienteDestinoPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ClienteEmisorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ClienteEmisorPanel.Designer.cs">
+      <DependentUpon>ClienteEmisorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FacturaPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FacturaPanel.Designer.cs">
+      <DependentUpon>FacturaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\InicioPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\InicioPanel.Designer.cs">
+      <DependentUpon>InicioPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\OperadorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\OperadorPanel.Designer.cs">
+      <DependentUpon>OperadorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\RegistrarViajePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RegistrarViajePanel.Designer.cs">
+      <DependentUpon>RegistrarViajePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepCajaGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepCajaGanancias.Designer.cs">
+      <DependentUpon>RepCajaGanancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepOperadorGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepOperadorGanancias.Designer.cs">
+      <DependentUpon>RepOperadorGanancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepTractorGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepTractorGanancias.Designer.cs">
+      <DependentUpon>RepTractorGanancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepViajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewers\RepViajes.Designer.cs">
+      <DependentUpon>RepViajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TerminarViajePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TerminarViajePanel.Designer.cs">
+      <DependentUpon>TerminarViajePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TractorPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TractorPanel.Designer.cs">
+      <DependentUpon>TractorPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Unidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Unidades.Designer.cs">
+      <DependentUpon>Unidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Viajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Viajes.Designer.cs">
+      <DependentUpon>Viajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="bin\Debug\Reportes\RepCajasGanancias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepCajasGanancias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reportes\RepFactura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reportes\RepOperadoresGanancias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepOperadoresGanancias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\Reportes\RepTractoresGanancias.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepTractoresGanancias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="bin\Debug\Reportes\RepViajes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepViajes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Administrador.resx">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CajaPanel.resx">
+      <DependentUpon>CajaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ClienteDestinoPanel.resx">
+      <DependentUpon>ClienteDestinoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ClienteEmisorPanel.resx">
+      <DependentUpon>ClienteEmisorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FacturaPanel.resx">
+      <DependentUpon>FacturaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\InicioPanel.resx">
+      <DependentUpon>InicioPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\OperadorPanel.resx">
+      <DependentUpon>OperadorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RegistrarViajePanel.resx">
+      <DependentUpon>RegistrarViajePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewers\RepCajaGanancias.resx">
+      <DependentUpon>RepCajaGanancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewers\RepOperadorGanancias.resx">
+      <DependentUpon>RepOperadorGanancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewers\RepTractorGanancias.resx">
+      <DependentUpon>RepTractorGanancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewers\RepViajes.resx">
+      <DependentUpon>RepViajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TerminarViajePanel.resx">
+      <DependentUpon>TerminarViajePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TractorPanel.resx">
+      <DependentUpon>TractorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Unidades.resx">
+      <DependentUpon>Unidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Viajes.resx">
+      <DependentUpon>Viajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="bin\Debug\Reportes\RepCajasGanancias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepCajasGanancias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reportes\RepFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reportes\RepOperadoresGanancias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepOperadoresGanancias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\Reportes\RepTractoresGanancias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepTractoresGanancias.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga__2_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-maine-computer-icons-close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-maine-computer-icons-close-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo - copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo - copia1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hermoso-fondo-degradado-blanco_108128-131 - copia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hermoso-fondo-degradado-blanco_108128-131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga__2_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\Facturas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\126325077_730606084471350_6796798581190618081_n.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
